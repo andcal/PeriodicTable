@@ -1,0 +1,8 @@
+.table {
+	display: grid;
+	grid-gap: 1px;
+	grid-template-columns: repeat(18, 72px); 
+	grid-template-rows: repeat(7, 74px) 25px repeat(2, 74px);
+	margin: 35px auto;
+	width: 1350px;
+} 

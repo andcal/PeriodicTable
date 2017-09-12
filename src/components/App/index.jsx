@@ -9,28 +9,29 @@ class App extends Component {
 	constructor (props) {
 		super(props)
 
-		this.state = { elements: ['a', 2,3] }
-	}
+		this.state = { 
+			elements: []
+        }
+    }
 
-	componentWillMount() {
-    	fetch('https://api.myjson.com/bins/yrxyd')
-     		.then((response) => {
-        		return response.json()
-      		})
-      		.then((elements) => {
-        		this.setState({ elements: elements })
-      		})
-  }
+    componentWillMount() {
+        fetch('https://api.myjson.com/bins/gwqv1')
+        .then((response) => {
+            return response.json()
+        })
+        .then((elements) => {
+            this.setState({ elements: elements })
+        })
+    }
 
-	render() {
-    	if (this.state.elements.length > 0) {
-      		return (
-          		<Table elementsList={this.state.elements} />
-      		)
-    	} else {
-     		 return <p className="text-center">Searching for elements...</p>
-    	}
-  	}
+
+    render() {
+
+        return (
+            <Table elements={this.state.elements} />
+            )
+    }
 }
+
 
 export default App
