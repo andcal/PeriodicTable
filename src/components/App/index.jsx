@@ -6,12 +6,13 @@ import Table from '../Table'
 
 class App extends Component {
 	
-	constructor (props) {
-		super(props)
+	constructor () {
+		super()
 
-		this.state = { 
-			elements: []
+        this.state = {
+            elements: []
         }
+
     }
 
     componentWillMount() {
@@ -24,12 +25,11 @@ class App extends Component {
         })
     }
 
-
     render() {
 
         return (
-            <Table elements={this.state.elements} />
-            )
+                <Table elements = {this.state.elements}/>
+        )
     }
 }
 
