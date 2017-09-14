@@ -8,10 +8,6 @@ class AnimationTrigger extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = {
-			groupCategory: this.props.groupCategory
-		}
-
 	}
 
 	render() {
@@ -20,13 +16,16 @@ class AnimationTrigger extends Component {
 
 			<div className={styles.triggerDiv	}>
 
-				<div className = {(this.state.groupCategory === 'metal') ? styles.metal : ''}>
+				<div className = {(this.props.groupCategory === 'metal') ? styles.metal : ''}>
+					<p>Conductivity</p>
 				</div>
 
-				<div className = {(this.state.groupCategory === 'nonmetal') ? styles.nonmetal : ''}>
+				<div className = {(this.props.groupCategory === 'nonmetal') ? styles.nonmetal : ''}>
+					<p>Hhalogens</p>
 				</div>
 
-				<div className = {(this.state.groupCategory === 'lanthanide') ? styles.lanthanide : ''}>
+				<div className = {(this.props.groupCategory === 'lanthanide') ? styles.lanthanide : ''}>
+					<p>Radioactivity</p>
 				</div>
 
 			</div>

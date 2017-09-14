@@ -14,14 +14,16 @@ class Table extends Component {
 			rotate: ''
 		}
 
-		this.handlePressedElement = this.handlePressedElement.bind(this)
+		this.onPressElement = this.onPressElement.bind(this)
 	}
 
-	handlePressedElement(groupCategory) {
-		
+	onPressElement(groupCategory) {
+
 		this.setState({
 			rotate: groupCategory
 		})
+
+		this.props.handlePressedElement(groupCategory)
 	}
 
 	renderPressedElements() {
@@ -38,13 +40,13 @@ class Table extends Component {
 
 					return(
 
-							<Element 
-								id = {uuid.v4()}
-								groupCategory = {groupCategory}
-								subCategory = {subCategory}
-								period = {el.ypos}
-								family = {el.xpos}
-								handlePressedElement = {this.handlePressedElement}
+							<Element
+									id = {uuid.v4()}
+									groupCategory = {groupCategory}
+									subCategory = {subCategory}
+									period = {el.ypos}
+									family = {el.xpos}
+									onPressElement = {this.onPressElement}
 							/>
 					)
 
@@ -60,7 +62,7 @@ class Table extends Component {
 							number = {el.number}
 							symbol = {el.symbol}
 							name = {el.name}
-							handlePressedElement = {this.handlePressedElement}
+							onPressElement = {this.onPressElement}
 						/>
 					)
 				}

@@ -1,9 +1,24 @@
-.trigger-div {
-	position: absolute;
+.trigger {
+
 }
 
 .metal {
-	width: 100px;
-	height: 100px;
-	background-image: url(https://gpg.geosci.xyz/_images/conductivity_physics_diagram.png);
+	width: 90px;
+    margin: 275px 0 0 549px;
+    height: 90px;
+    background-color: lime;
+}
+
+.nonmetal {
+	width: 90px;
+    margin: 100px 0 0 1160px;
+    height: 90px;
+    background-color: lime;
+}
+
+.lanthanide {
+	width: 90px;
+    margin: 550px 0 0 640px;
+    height: 90px;
+    background-color: lime;
 }

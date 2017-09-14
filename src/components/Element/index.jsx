@@ -6,13 +6,7 @@ class Element extends Component {
 
 	constructor(props) {
 		super(props)
-
-		this.onPressElement = this.onPressElement.bind(this)
-	}
-
-	onPressElement(groupCategory) {
-
-		this.props.handlePressedElement(groupCategory)
+		
 	}
 
 	render() {
@@ -31,7 +25,7 @@ class Element extends Component {
 					${styles[period]}
 				`}
 
-				onClick = { () => this.onPressElement(groupCategory) }
+				onClick = { () => this.props.onPressElement(groupCategory) }
 			>
 				<p className = {styles.number}>{this.props.number}</p>
 				<p className = {styles.symbol}>{this.props.symbol}</p>
