@@ -16,6 +16,10 @@
 	margin: 6px auto;
 }
 
+.rotate p {
+	visibility: hidden;
+}
+
 .alkali, .alkaline, .post-transition, .transition {
 	background-color: green;
 }

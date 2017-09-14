@@ -7,11 +7,3 @@
 	width: 1350px;
 } 
 
-.table div{
-	transform: rotateY(1deg);
-	transition: all 1s;
-}
-
-.table.appearance div {
-	transform: rotateY(360deg);
-}

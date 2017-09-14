@@ -3,84 +3,82 @@ import uuid from 'uuid'
 
 import styles from './table.css'
 import Element from '../Element'
-
+import AnimationTrigger from '../AnimationTrigger'
 
 class Table extends Component {
 
-	constructor (props) {
+	constructor(props) {
 		super(props)
 
 		this.state = {
-			displayedElement: [],
-			appearance: false,
-			delY: 0
+			rotate: ''
 		}
 
-		this.handleWheel = this.handleWheel.bind(this)
-
+		this.handlePressedElement = this.handlePressedElement.bind(this)
 	}
 
-	componentDidMount() {
-   		document.addEventListener('wheel', this.handleWheel);
-	
-	}
-
-	handleWheel(e) {
-		if(e.deltaY > 0) {
-			this.setState({
-				appearance: true
-			})
-		}
-
-		this.setState({
-			delY: this.state.delY + Math.trunc(e.deltaY)
-		})
-		console.log('del:'+ this.state.delY)
-
-		this.props.elements.map(el => {
-			if(this.state.delY === el.number) {
-				let newElement = {
-					id: uuid.v4(),
-					number: el.number,
-					symbol: el.symbol,
-					name: el.name,
-					period: el.ypos,
-					family: el.xpos,
-					category: el.category
+	handlePressedElement(groupCategory) {
 		
-				}
-				this.setState({
-					displayedElement: this.state.displayedElement.concat(newElement)
-				})
-			}
+		this.setState({
+			rotate: groupCategory
 		})
 	}
-	
-	render() {
-		return (
-			<div className={`
-				${styles.table}
-				${(this.state.appearance) ? styles.appearance : ''}
-				`}
-			>
-			{ this.state.displayedElement.map(el => 
 
-				<Element
-								id = {el.id}
-								number = {el.number}
-								symbol = {el.symbol}
-								name = {el.name}
-								category = {el.category}
-								period = {el.period}
-								family = {el.family}
-				/>
-			)}
-	
-			</div>
+	renderPressedElements() {
+
+		return(
+
+			this.props.elements.map( el => {
+
+				let categories = el.category.split(' ')
+				let groupCategory = categories[categories.length-1]
+				let subCategory = categories[0]
+
+				if( groupCategory === this.state.rotate ) {
+
+					return(
+
+							<Element 
+								id = {uuid.v4()}
+								groupCategory = {groupCategory}
+								subCategory = {subCategory}
+								period = {el.ypos}
+								family = {el.xpos}
+								handlePressedElement = {this.handlePressedElement}
+							/>
+					)
+
+				} else {
+
+					return(
+						<Element
+							id = {uuid.v4()}
+							groupCategory = {groupCategory}
+							subCategory = {subCategory}
+							period = {el.ypos}
+							family = {el.xpos}
+							number = {el.number}
+							symbol = {el.symbol}
+							name = {el.name}
+							handlePressedElement = {this.handlePressedElement}
+						/>
+					)
+				}
+			})
 		)
 	}
 
+
+	render() {
+
+		return(
+			<div className = {styles.table}>
+
+				{this.renderPressedElements()}
+
+			</div>
+		)
+	}
 }
 
 export default Table
-

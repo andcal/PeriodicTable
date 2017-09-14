@@ -1,0 +1,9 @@
+.trigger-div {
+	position: absolute;
+}
+
+.metal {
+	width: 100px;
+	height: 100px;
+	background-image: url(https://gpg.geosci.xyz/_images/conductivity_physics_diagram.png);
+}
