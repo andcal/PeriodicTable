@@ -12,16 +12,15 @@ class App extends Component {
 
         this.state = {
             elements: [],
-            rotate: '',
-            showModal: false
+            rotate: ''
         }
 
         this.handlePressedElement = this.handlePressedElement.bind(this)
-        this.handleCloseModal = this.handleCloseModal.bind(this)
+        this.handleReappearanceElements = this.handleReappearanceElements.bind(this)
     }
 
     componentWillMount() {
-        fetch('https://api.myjson.com/bins/gwqv1')
+        fetch('https://periodic-table-mendeleev.firebaseio.com/elements.json')
         .then((response) => {
             return response.json()
         })
@@ -32,16 +31,12 @@ class App extends Component {
 
     handlePressedElement(groupCategory) {    
         this.setState({
-            rotate: groupCategory,
-            showModal: true
+            rotate: groupCategory
         }) 
     }
 
-    handleCloseModal() {
-        console.log('close')
-        this.setState({
-            showModal: false
-        })
+    handleReappearanceElements() {
+        //renderTable()
     }
 
     renderAnimationContainer() {
@@ -52,8 +47,7 @@ class App extends Component {
                     
                      <AnimationContainer
                         groupCategory = {this.state.rotate}
-                        showModal = {this.state.showModal}
-                        onCloseModal = {this.handleCloseModal}
+                        onReappearElements = {this.handleReappearanceElements}
                     />
             )
         } 
@@ -68,10 +62,10 @@ class App extends Component {
                 <Table
                     elements = {this.state.elements}
                     handlePressedElement = {this.handlePressedElement}
-
+                    reappearanceElements = {this.state.rotate}
                 />
 
-                {this.renderAnimationContainer()}
+                { this.renderAnimationContainer() }
 
 
             </div>

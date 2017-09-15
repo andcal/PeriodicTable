@@ -3,6 +3,7 @@ import uuid from 'uuid'
 
 import styles from './table.css'
 import Element from '../Element'
+import ElementCard from '../ElementCard'
 import AnimationTrigger from '../AnimationTrigger'
 
 class Table extends Component {
@@ -11,10 +12,14 @@ class Table extends Component {
 		super(props)
 
 		this.state = {
-			rotate: ''
+			rotate: '',
+			card: false,
+			elementData: ''
 		}
 
 		this.onPressElement = this.onPressElement.bind(this)
+		this.handleOverElement = this.handleOverElement.bind(this)
+		this.handleOutElement = this.handleOutElement.bind(this)
 	}
 
 	onPressElement(groupCategory) {
@@ -25,6 +30,21 @@ class Table extends Component {
 
 		this.props.handlePressedElement(groupCategory)
 	}
+
+	handleOverElement(elementData) {
+		this.setState({
+			elementData: elementData,
+			card: true
+		})
+	}
+
+	handleOutElement(e) {
+		this.setState({
+			card: false
+		})
+	}
+
+
 
 	renderPressedElements() {
 
@@ -47,6 +67,8 @@ class Table extends Component {
 									period = {el.ypos}
 									family = {el.xpos}
 									onPressElement = {this.onPressElement}
+									onOverElement = {this.handleOverElement}
+									onOutElement = {this.handleOutElement}
 							/>
 					)
 
@@ -63,11 +85,25 @@ class Table extends Component {
 							symbol = {el.symbol}
 							name = {el.name}
 							onPressElement = {this.onPressElement}
+							onOverElement = {this.handleOverElement}
+							onOutElement = {this.handleOutElement}
 						/>
 					)
 				}
 			})
 		)
+	}
+
+	renderCardElement() {
+
+		if(this.state.card && this.state.rotate === '') {
+
+			return(
+				<ElementCard
+					elementData = {this.state.elementData}
+				/>
+			)
+		}
 	}
 
 
@@ -77,6 +113,8 @@ class Table extends Component {
 			<div className = {styles.table}>
 
 				{this.renderPressedElements()}
+
+				{this.renderCardElement()}
 
 			</div>
 		)

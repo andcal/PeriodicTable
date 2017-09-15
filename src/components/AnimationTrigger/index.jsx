@@ -14,18 +14,24 @@ class AnimationTrigger extends Component {
 
 		return(
 
-			<div className={styles.triggerDiv	}>
+			<div className = {styles.triggerDiv}>
 
-				<div className = {(this.props.groupCategory === 'metal') ? styles.metal : ''}>
-					<p>Conductivity</p>
+				<div 
+					className = {(this.props.groupCategory === 'metal') ? styles.metal : ''}
+					onClick = {this.props.onOpenModal}
+				>
 				</div>
 
-				<div className = {(this.props.groupCategory === 'nonmetal') ? styles.nonmetal : ''}>
-					<p>Hhalogens</p>
+				<div
+					className = {(this.props.groupCategory === 'nonmetal') ? styles.nonmetal : ''}
+					onClick = {this.props.onOpenModal}
+				>
 				</div>
 
-				<div className = {(this.props.groupCategory === 'lanthanide') ? styles.lanthanide : ''}>
-					<p>Radioactivity</p>
+				<div 
+					className = {(this.props.groupCategory === 'lanthanide') ? styles.lanthanide : ''}
+					onClick = {this.props.onOpenModal}
+				>
 				</div>
 
 			</div>
