@@ -12,7 +12,7 @@ class Table extends Component {
 		super(props)
 
 		this.state = {
-			rotate: '',
+			rotate: this.props.reappearanceElements,
 			card: false,
 			elementData: ''
 		}

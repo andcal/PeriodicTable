@@ -13,9 +13,9 @@ class ElementCard extends Component {
 
 		return(
 			<div className = {styles.card}>
-				<p>{this.props.elementData.name}</p>
-				<p>{this.props.elementData.groupCategory}</p>
-				<p>{this.props.elementData.subCategory}</p>
+				<p>Name: {this.props.elementData.name}</p>
+				<p>Category: {this.props.elementData.groupCategory}</p>
+				<p>Subcategory: {this.props.elementData.subCategory}</p>
 			</div>
 		)
 	}

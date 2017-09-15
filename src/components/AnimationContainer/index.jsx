@@ -30,8 +30,6 @@ class AnimationContainer extends Component {
 		this.props.onReappearElements()
 	}
 
-
-
 	render() {
 		return(
 			<div className = {styles.container}>

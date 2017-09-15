@@ -33,10 +33,12 @@ class App extends Component {
         this.setState({
             rotate: groupCategory
         }) 
+        console.log('pressed ', this.state.rotate)
     }
 
     handleReappearanceElements() {
-        //renderTable()
+        
+        console.log('hola ', this.state.rotate)
     }
 
     renderAnimationContainer() {

@@ -19,7 +19,7 @@ class AnimationTrigger extends Component {
 				<div 
 					className = {(this.props.groupCategory === 'metal') ? styles.metal : ''}
 					onClick = {this.props.onOpenModal}
-				>
+				>	
 				</div>
 
 				<div

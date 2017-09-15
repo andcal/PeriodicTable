@@ -19,13 +19,13 @@ class Element extends Component {
 				symbol: this.props.symbol
 			}
 		}
-		
 	}
 
 	render() {
 
+		let elementData = this.state.elementData
 		let groupCategory = this.state.elementData.groupCategory
-		let subCategory = this.state.elementData.subCategory 
+		let subCategory = this.state.elementData.subCategory
 		let family = `family${this.state.elementData.family}`
 		let period = `period${this.state.elementData.period}`
 
@@ -38,7 +38,7 @@ class Element extends Component {
 					${styles[period]}
 				`}
 				onClick = { () => this.props.onPressElement(groupCategory) }
-				onMouseOver = { () => this.props.onOverElement(this.state.elementData) }
+				onMouseOver = { () => this.props.onOverElement(elementData) }
 				onMouseOut = {this.props.onOutElement}
 			>
 				<p className = {styles.number}>{this.props.number}</p>
