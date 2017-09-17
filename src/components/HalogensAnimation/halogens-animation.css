@@ -1,0 +1,146 @@
+#edge {
+	fill: none;
+	stroke: #000;
+	stroke-width: 5;
+	animation: desappearEdge 3000ms forwards 7000ms;
+}
+
+@keyframes desappearEdge {
+	100% {opacity: 0}
+}
+
+#halogenGroup {
+	animation-name: halogenGropuEntrance, halogenGroupScale, groupDesappear;
+	animation-duration: 2000ms, 10000ms, 2000ms;
+	animation-timing-funtion: cubic-bezier(0.19, 1, 0.22, 1), linear;
+	animation-fill-mode: forwards;
+	animation-delay: 3000ms, 6500ms, 11000ms;
+}
+
+@keyframes halogenGropuEntrance {
+	100% {height: 304px;}
+}
+
+@keyframes halogenGroupScale {
+	0% {transform-origin: center;}
+
+	100% {
+		transform-origin: center;
+		transform: scale(1.5) translateX(-25px);
+	}
+}
+
+#alkalinGroup {
+	animation-name: alkalinGropuEntrance, alkalinGroupScale, groupDesappear;
+	animation-duration: 2000ms, 10000ms, 2000ms;
+	animation-timing-funtion: cubic-bezier(0.19, 1, 0.22, 1), linear;
+	animation-fill-mode: forwards;
+	animation-delay: 4500ms, 7500ms, 11000ms;
+}
+
+@keyframes alkalinGropuEntrance {
+	100% {height: 305px;}
+}
+
+@keyframes alkalinGroupScale {
+	0% {transform-origin: center;}
+	100% {
+		transform-origin: center;
+		transform: scale(1.5) translateX(25px);
+	}
+}
+
+@keyframes groupDesappear {
+	100% {opacity: 0;}
+}
+
+#halogen {
+	transform-origin: center;
+	transform: translate(3px, 6px);
+	opacity: 0;
+	animation-name: halogenEntrance, halogenScale;
+	animation-duration: 2000ms, 9000ms;
+	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275), linear;
+	animation-fill-mode: forwards;
+	animation-delay: 5500ms, 6500ms;
+}
+
+@keyframes halogenEntrance {
+	100% {opacity: 1;}
+}
+
+@keyframes halogenScale {
+
+	100% {	
+		transform: scale(1.5) translate(-22px, -6px);
+	}
+}
+
+#alkalin {
+	transform-origin: center;
+	transform: translate(0px, 15px);
+	opacity: 0;
+	animation-name: alkalinEntrance, alkalinScale;
+	animation-duration: 2000ms, 9000ms;
+	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275), linear;
+	animation-fill-mode: forwards;
+	animation-delay: 6500ms, 7500ms;
+}
+
+@keyframes alkalinEntrance {
+	100% {opacity: 1;}
+}
+
+@keyframes alkalinScale {
+	100% {
+		transform: scale(1.5) translateX(25px);
+	}
+}
+
+#halogen path:nth-child(n+2) {
+	animation: desappear 2000ms forwards 11000ms;
+}
+
+#alkalin path:nth-child(n+2) {
+	animation: desappear 2000ms forwards 11000ms;
+}
+
+@keyframes desappear {
+	100% {opacity: 0}
+}
+
+#halogen path:first-child {
+	transform-origin: center;
+	animation-name: prefusionHal;
+	animation-duration: 4000ms;
+	animation-timing-funtion: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
+	animation-delay: 12000ms;
+}
+
+@keyframes prefusionHal {
+	70% {transform: translate(-100px, 115px) scale(2);}
+
+	100% {transform: translate(-220px, 115px) scale(2.1);}
+}
+
+#alkalin path:first-child {
+	transform-origin: center;
+	animation-name: prefusionAlk;
+	animation-duration: 4000ms;
+	animation-timing-funtion: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
+	animation-delay: 12000ms;
+}
+
+@keyframes prefusionAlk {
+	70% {transform: translate(100px, 117px) scale(2);}
+
+	100% {transform: translate(230px, 117px) scale(2.1);}
+}
+
+
+
+
+
+

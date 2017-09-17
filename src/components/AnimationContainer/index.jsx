@@ -3,6 +3,7 @@ import ReactModal from 'react-modal'
 
 import styles from './animation-container.css'
 import AnimationTrigger from '../AnimationTrigger'
+import HalogensAnimation from '../HalogensAnimation'
 
 class AnimationContainer extends Component {
 
@@ -10,22 +11,22 @@ class AnimationContainer extends Component {
 		super(props)
 
 		this.state = {
-			showModal: false
+			showModalHalogens: false
 		}
 
-		this.handleOpenModal = this.handleOpenModal.bind(this)
+		this.handleOpenModalHalogens = this.handleOpenModalHalogens.bind(this)
 		this.handleCloseModal = this.handleCloseModal.bind(this)
 	}
 
-	handleOpenModal() {
+	handleOpenModalHalogens() {
 		this.setState({
-			showModal: true
+			showModalHalogens: true
 		})
 	}
 
 	handleCloseModal() {
 		this.setState({
-			showModal: false
+			showModalHalogens: false
 		})
 		this.props.onReappearElements()
 	}
@@ -36,15 +37,18 @@ class AnimationContainer extends Component {
 
 				<AnimationTrigger
 					groupCategory = {this.props.groupCategory}
-					onOpenModal = {this.handleOpenModal}
+					onOpenModalConductivity = {this.handleOpenModalHalogens}
 				/>
 
-				<ReactModal 
-                        isOpen = {this.state.showModal}
-                        contentLabel="Modal for snimations"
-                        onRequestClose={this.handleCloseModal} 
+				<ReactModal
+					contentLabel="Modal for halogens animation"
+                    isOpen = {this.state.showModalHalogens}
+                    onRequestClose={this.handleCloseModal} 
                 >
-                        <button onClick = {this.handleCloseModal}>Close</button>
+
+                	<HalogensAnimation />
+
+                    <button onClick = {this.handleCloseModal}>Close</button>
                 </ReactModal>
 
 			</div>
