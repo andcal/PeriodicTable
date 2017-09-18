@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Anime from 'react-anime'
+import Animejs from 'animejs'
 import { Draggable, Droppable } from 'react-drag-and-drop'
 
 import styles from './halogens-animation.css'
@@ -20,7 +21,7 @@ class HalogensAnimation extends Component {
 
 		this.handleInteraction = this.handleInteraction.bind(this)
 		this.handleDropAlk = this.handleDropAlk.bind(this)
-		this.hanldeDropHal	 = this.handleDropHal.bind(this)
+		this.handleDropHal = this.handleDropHal.bind(this)
 	}
 
 	componentDidMount() {
@@ -104,7 +105,7 @@ class HalogensAnimation extends Component {
 		}
 	}
 
-	renderIntearction() {
+		renderIntearction() {
 		if(this.state. ineteraction) {
 			console.log('ineteraction')
 			return(

@@ -4,7 +4,6 @@ import uuid from 'uuid'
 import styles from './table.css'
 import Element from '../Element'
 import ElementCard from '../ElementCard'
-import AnimationTrigger from '../AnimationTrigger'
 
 class Table extends Component {
 
@@ -22,12 +21,16 @@ class Table extends Component {
 		this.handleOutElement = this.handleOutElement.bind(this)
 	}
 
-	onPressElement(groupCategory) {
+	componentWillReceiveProps(props) {
+		this.setState({
+			rotate: props.reappearanceElements
+		})
+	}
 
+	onPressElement(groupCategory) {
 		this.setState({
 			rotate: groupCategory
 		})
-
 		this.props.handlePressedElement(groupCategory)
 	}
 
@@ -44,12 +47,8 @@ class Table extends Component {
 		})
 	}
 
-
-
 	renderPressedElements() {
-
 		return(
-
 			this.props.elements.map( el => {
 
 				let categories = el.category.split(' ')
@@ -57,23 +56,19 @@ class Table extends Component {
 				let subCategory = categories[0]
 
 				if( groupCategory === this.state.rotate ) {
-
 					return(
-
-							<Element
-									id = {uuid.v4()}
-									groupCategory = {groupCategory}
-									subCategory = {subCategory}
-									period = {el.ypos}
-									family = {el.xpos}
-									onPressElement = {this.onPressElement}
-									onOverElement = {this.handleOverElement}
-									onOutElement = {this.handleOutElement}
-							/>
+						<Element
+							id = {uuid.v4()}
+							groupCategory = {groupCategory}
+							subCategory = {subCategory}								period = {el.ypos}
+							family = {el.xpos}
+							onPressElement = {this.onPressElement}
+							onOverElement = {this.handleOverElement}
+							onOutElement = {this.handleOutElement}
+						/>
 					)
 
 				} else {
-
 					return(
 						<Element
 							id = {uuid.v4()}
@@ -97,7 +92,6 @@ class Table extends Component {
 	renderCardElement() {
 
 		if(this.state.card && this.state.rotate === '') {
-
 			return(
 				<ElementCard
 					elementData = {this.state.elementData}

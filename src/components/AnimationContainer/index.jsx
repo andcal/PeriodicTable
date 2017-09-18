@@ -51,6 +51,7 @@ class AnimationContainer extends Component {
               		<HalogensAnimation />
 
                     <button onClick = {this.handleCloseModal}>Close</button>
+               
                 </ReactModal>
 
 			</div>

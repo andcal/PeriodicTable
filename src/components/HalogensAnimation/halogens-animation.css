@@ -56,7 +56,6 @@
 
 #halogen {
 	transform-origin: center;
-	transform: translate(3px, 6px);
 	opacity: 0;
 	animation-name: halogenEntrance, halogenScale;
 	animation-duration: 2000ms, 9000ms;
@@ -66,11 +65,17 @@
 }
 
 @keyframes halogenEntrance {
-	100% {opacity: 1;}
+
+	0% {transform: translate(3px, 21px);}
+	100% {
+		transform: translate(3px, 6px);
+		opacity: 1;
+	}
 }
 
 @keyframes halogenScale {
-
+	
+	0% {transform: translate(3px, 6px);}
 	100% {	
 		transform: scale(1.5) translate(-22px, -6px);
 	}
@@ -78,7 +83,6 @@
 
 #alkalin {
 	transform-origin: center;
-	transform: translate(0px, 15px);
 	opacity: 0;
 	animation-name: alkalinEntrance, alkalinScale;
 	animation-duration: 2000ms, 9000ms;
@@ -88,13 +92,17 @@
 }
 
 @keyframes alkalinEntrance {
-	100% {opacity: 1;}
+	0% {transform: translate(0px, 30px);}
+	100% {
+		transform: translate(0px, 15px);
+		opacity: 1;
+	}
 }
 
 @keyframes alkalinScale {
-	100% {
-		transform: scale(1.5) translateX(25px);
-	}
+
+	0% {transform: translate(0px, 15px);}
+	100% {transform: scale(1.5) translateX(25px);}
 }
 
 #halogen path:nth-child(n+2) {

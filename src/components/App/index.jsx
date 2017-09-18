@@ -33,20 +33,18 @@ class App extends Component {
         this.setState({
             rotate: groupCategory
         }) 
-        console.log('pressed ', this.state.rotate)
     }
 
     handleReappearanceElements() {
-        
-        console.log('hola ', this.state.rotate)
+        this.setState({
+            rotate: ''
+        })
     }
 
     renderAnimationContainer() {
-
         if(this.state.rotate !== '') {
     
-            return (
-                    
+            return (               
                      <AnimationContainer
                         groupCategory = {this.state.rotate}
                         onReappearElements = {this.handleReappearanceElements}
@@ -58,7 +56,6 @@ class App extends Component {
     render() {
 
         return (
-
             <div>
 
                 <Table
@@ -68,7 +65,6 @@ class App extends Component {
                 />
 
                 { this.renderAnimationContainer() }
-
 
             </div>
         )
