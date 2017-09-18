@@ -139,6 +139,22 @@
 	100% {transform: translate(230px, 117px) scale(2.1);}
 }
 
+.interactionContainer {
+	display: inline-flex;
+}
+
+.mixAlk {
+	width: 60px;
+	height: 60px;
+	background-color: blue;
+}
+
+.mixHal {
+	width: 60px;
+	height: 60px;
+	background-color: red;
+}
+
 
 
 

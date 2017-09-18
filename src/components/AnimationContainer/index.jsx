@@ -4,6 +4,7 @@ import ReactModal from 'react-modal'
 import styles from './animation-container.css'
 import AnimationTrigger from '../AnimationTrigger'
 import HalogensAnimation from '../HalogensAnimation'
+import HalogensInteraction from '../HalogensInteraction'
 
 class AnimationContainer extends Component {
 
@@ -37,7 +38,8 @@ class AnimationContainer extends Component {
 
 				<AnimationTrigger
 					groupCategory = {this.props.groupCategory}
-					onOpenModalConductivity = {this.handleOpenModalHalogens}
+					onOpenModalHalogens = {this.handleOpenModalHalogens}
+					onHalogensInteraction = {this.handleHalogensInteraction}
 				/>
 
 				<ReactModal
@@ -46,7 +48,7 @@ class AnimationContainer extends Component {
                     onRequestClose={this.handleCloseModal} 
                 >
 
-                	<HalogensAnimation />
+              		<HalogensAnimation />
 
                     <button onClick = {this.handleCloseModal}>Close</button>
                 </ReactModal>

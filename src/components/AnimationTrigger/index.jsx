@@ -18,22 +18,19 @@ class AnimationTrigger extends Component {
 
 				<div 
 					className = {(this.props.groupCategory === 'metal') ? styles.metal : ''}
-					onClick = {this.props.onOpenModalConductivity}
 				>	
 				</div>
 
 				<div
 					className = {(this.props.groupCategory === 'nonmetal') ? styles.nonmetal : ''}
-					onClick = {this.props.onOpenModal}
+					onClick = {this.props.onOpenModalHalogens}
 				>
 				</div>
 
 				<div 
 					className = {(this.props.groupCategory === 'lanthanide') ? styles.lanthanide : ''}
-					onClick = {this.props.onOpenModal}
 				>
 				</div>
-
 			</div>
 
 		)
