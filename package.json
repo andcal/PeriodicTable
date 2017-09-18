@@ -24,9 +24,9 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "animejs": "^2.1.0",
     "normalize-css": "^2.3.1",
     "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
     "react-anime": "^0.3.4",
     "react-dom": "^15.6.1",
     "react-drag-and-drop": "^2.4.0",

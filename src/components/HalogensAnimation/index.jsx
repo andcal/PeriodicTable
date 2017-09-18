@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Anime from 'react-anime'
-import Animejs from 'animejs'
 import { Draggable, Droppable } from 'react-drag-and-drop'
 
 import styles from './halogens-animation.css'

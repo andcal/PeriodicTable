@@ -46,6 +46,7 @@ class AnimationContainer extends Component {
 					contentLabel="Modal for halogens animation"
                     isOpen = {this.state.showModalHalogens}
                     onRequestClose={this.handleCloseModal} 
+                    className = {styles.modal}
                 >
 
               		<HalogensAnimation />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import uuid from 'uuid'
 
 import styles from './table.css'

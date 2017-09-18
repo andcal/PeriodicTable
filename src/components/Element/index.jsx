@@ -43,7 +43,6 @@ class Element extends Component {
 			>
 				<p className = {styles.number}>{this.props.number}</p>
 				<p className = {styles.symbol}>{this.props.symbol}</p>
-				<p className = {styles.name}>{this.props.name}</p>
 			</div>
 		)
 	}

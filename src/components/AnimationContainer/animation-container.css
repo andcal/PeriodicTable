@@ -5,3 +5,7 @@
     width: 0;
     height: 0;
 }
+
+.modal {
+	background-color: rgba(100,100,100,0.7);
+}

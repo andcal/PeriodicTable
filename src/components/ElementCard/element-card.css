@@ -1,7 +1,79 @@
+:root {
+	--alkali: rgb(24, 255, 146);
+	--transition: rgb(28, 226, 178);
+	--post-transition: rgb(166, 255, 143);
+	--metalloid: rgb(251, 243, 140);
+	--diatomic: rgb(97, 195, 255);
+	--polyatomic: rgb(90, 135, 255);
+	--noble: rgb(255, 20, 97);
+	--lanthanide: rgb(251, 137, 251);
+	--actinide: rgb(194, 110, 255);
+}
+
 .card {
-	grid-column-start: 5;
-	grid-column-end: 9;
+	grid-column-start: 7;
+	grid-column-end: 10;
 	grid-row-start: 1;
-	grid-row-end: 3;
-	background-color: orange;
+	grid-row-end: 4;
+	border-width: 2px;
+	border-style: solid;
+}
+
+.name, .groupCategory, .subCategory {
+	align-content: center;
+	font-size: 1em;
+}
+
+.alkali, .alkaline {
+	background-color: rgba(24, 255, 146, 0.2);
+	border-color: var(--alkali);
+	color: var(--alkali);
+}
+
+.transition {
+	background-color: rgba(28, 226, 178, 0.2);
+	border-color: var(--transition);
+	color: var(--transition);
+}
+
+.post-transition {
+	background-color: rgba(166, 255, 143, 0.2);
+	border-color: var(--post-transition);
+	color: var(--post-transition);
+}
+
+.diatomic {
+	background-color: rgba(97, 195, 255, 0.2);
+	border-color: var(--diatomic);
+	color: var(--diatomic);
+}
+
+.polyatomic {
+	background-color: rgba(90, 135, 255, 0.2);
+	border-color: var(--polyatomic);
+	color: var(--polyatomic);
+}
+
+.metalloid {
+	background-color: rgba(251, 243, 140, 0.2);
+	border-color: var(--metalloid);
+	color: var(--metalloid);
+}
+
+.lanthanide {
+	background-color: rgba(251, 137, 251, 0.2);
+	border-color: var(--lanthanide);
+	color: var(--lanthanide);
+}
+
+.actinide {
+	background-color: rgba(194, 110, 255, 0.2);
+	border-color: var(--actinide);
+	color: var(--actinide);
+}
+
+.noble {
+	background-color: rgba(255, 20, 97, 0.2);
+	border-color: var(--noble);
+	color: var(--noble);
 }

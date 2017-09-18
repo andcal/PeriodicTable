@@ -1,43 +1,95 @@
+:root {
+	--alkali: rgb(24, 255, 146);
+	--transition: rgb(28, 226, 178);
+	--post-transition: rgb(166, 255, 143);
+	--metalloid: rgb(251, 243, 140);
+	--diatomic: rgb(97, 195, 255);
+	--polyatomic: rgb(90, 135, 255);
+	--noble: rgb(255, 20, 97);
+	--lanthanide: rgb(251, 137, 251);
+	--actinide: rgb(194, 110, 255);
+}
+
+.element {
+	border-width: 2px;
+	border-style: solid;
+}
+
+.element:hover {
+	transform: scale(0.9);
+	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .number {
-	font-size: 0.9em;
+	font-size: 0.8em;
+	font-weight: 300;
 	text-align: left;
 	margin: 7px 8px 0;
 }
 
 .symbol {
-	font-size: 1.5em;
+	font-size: 2em;
+	font-weight: 500;
 	text-align: center;
 	margin: auto;
-}
-
-.name {
-	font-size: 0.7em;
-	text-align: center;
-	margin: 6px auto;
 }
 
 .rotate p {
 	visibility: hidden;
 }
 
-.alkali, .alkaline, .post-transition, .transition {
-	background-color: green;
+.alkali, .alkaline {
+	background-color: rgba(24, 255, 146, 0.2);
+	border-color: var(--alkali);
+	color: var(--alkali);
 }
 
-.diatomic, .polyatomic {
-	background-color: blue;
+.transition {
+	background-color: rgba(28, 226, 178, 0.2);
+	border-color: var(--transition);
+	color: var(--transition);
+}
+
+.post-transition {
+	background-color: rgba(166, 255, 143, 0.2);
+	border-color: var(--post-transition);
+	color: var(--post-transition);
+}
+
+.diatomic {
+	background-color: rgba(97, 195, 255, 0.2);
+	border-color: var(--diatomic);
+	color: var(--diatomic);
+}
+
+.polyatomic {
+	background-color: rgba(90, 135, 255, 0.2);
+	border-color: var(--polyatomic);
+	color: var(--polyatomic);
 }
 
 .metalloid {
-	background-color: yellow;
+	background-color: rgba(251, 243, 140, 0.2);
+	border-color: var(--metalloid);
+	color: var(--metalloid);
 }
 
-.lanthanide, .actinide {
-	background-color: pink;
+.lanthanide {
+	background-color: rgba(251, 137, 251, 0.2);
+	border-color: var(--lanthanide);
+	color: var(--lanthanide);
+}
+
+.actinide {
+	background-color: rgba(194, 110, 255, 0.2);
+	border-color: var(--actinide);
+	color: var(--actinide);
 }
 
 .noble {
-	background-color: red;
+	background-color: rgba(255, 20, 97, 0.2);
+	border-color: var(--noble);
+	color: var(--noble);
 }
 
 .family1 {
