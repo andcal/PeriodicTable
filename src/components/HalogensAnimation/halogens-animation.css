@@ -1,6 +1,7 @@
 .animation {
-	margin: 100px 320px;
     position: absolute;
+    top: 60px;
+    left: 320px;
 }
 
 #edge {
@@ -104,7 +105,7 @@
 #halogen path:first-child {
 	transform-origin: center;
 	animation-name: prefusionHal;
-	animation-duration: 4000ms;
+	animation-duration: 6000ms;
 	animation-timing-funtion: cubic-bezier(0.39, 0.575, 0.565, 1);
 	animation-fill-mode: forwards;
 	animation-delay: 12000ms;
@@ -125,7 +126,7 @@
 #alkalin path:first-child {
 	transform-origin: center;
 	animation-name: prefusionAlk;
-	animation-duration: 4000ms;
+	animation-duration: 6000ms;
 	animation-timing-funtion: linear;
 	animation-fill-mode: forwards;
 	animation-delay: 12000ms;
@@ -146,10 +147,10 @@
 	transform: translateX(140px) scale(1.5);
 	opacity: 0;
 	animation-name: appearanceS;
-	animation-duration: 1500ms;
+	animation-duration: 2000ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	animation-fill-mode: forwards;
-	animation-delay: 14500ms;
+	animation-delay: 16500ms;
 }
 
 @keyframes appearanceS {
@@ -165,34 +166,80 @@
 	animation-duration: 1700ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	animation-fill-mode: forwards;
-	animation-delay: 17000ms;
+	animation-delay: 20000ms;
 }
 
 @keyframes appearanceALT {
 	100% {transform: translate(150px, 0px); opacity: 1;}
 }
 
-.animation text{
-	color: #c5c2cb;
+.halogenText p {
+    position: absolute;
+    top: 530px;
+    left: 360px;
+    width: 770px;
+    color: #c5c2cb;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+.halogenText p:nth-child(1) {
+	visibility: hidden;
+	animation: showText 6000ms linear forwards 1000ms;
+}
+
+.halogenText p:nth-child(2) {
+	visibility: hidden;
+	animation: showText 7000ms linear forwards 7100ms;
+}
+
+.halogenText p:nth-child(3) {
+	visibility: hidden;
+	animation: showText 6000ms linear forwards 14200ms;
+}
+
+.halogenText p:nth-child(4) {
+	visibility: hidden;
+	animation: showText 5000ms linear forwards 20300ms;
+}
+
+@keyframes showText {
+	99% {visibility: visible;}
+	100% {visibility: hidden;}
 }
 
 .interactionContainer {
 	display: inline-flex;
 }
 
-.mixAlk {
-	width: 60px;
-	height: 60px;
-	background-color: blue;
+.compound {
+	width: 100px;
+	height: 50px;
 }
 
-.mixHal {
-	width: 60px;
-	height: 60px;
-	background-color: red;
+.compound span:first-child {
+	font-size: 1.2em;
+	font-weight: 300;
+	text-align: center;
 }
 
+.compound span:nth-child(n+2) {
+	font-size: 1.4em;
+	font-weight: 300;
+	text-align: center;
+}
 
+.dropAlkalin {
+	width: 60px;
+	height: 60px;
+	background-color: var(--alkalin);
+}
+
+.dropHalogen {
+	width: 60px;
+	height: 60px;
+	background-color: var(--diatomic);
+}
 
 
 
