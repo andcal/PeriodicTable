@@ -45,13 +45,18 @@ class AnimationContainer extends Component {
 				<ReactModal
 					contentLabel="Modal for halogens animation"
                     isOpen = {this.state.showModalHalogens}
-                    onRequestClose={this.handleCloseModal} 
+                    onRequestClose = {this.handleCloseModal} 
                     className = {styles.modal}
+                    overlayClassName = {styles.overlay}
                 >
 
               		<HalogensAnimation />
 
-                    <button onClick = {this.handleCloseModal}>Close</button>
+                    <span onClick = {this.handleCloseModal}>
+                    	<svg x="0" y="0" width="100%" height="100%" viewBox="0 0 20 20">
+                    		<path fill="none" stroke="#c5c2cb" strokeWidth="3" strokeLinecap="butt" d="M1,19L19,1 M1,1l18,18"/>
+                    	</svg>
+                    </span>
                
                 </ReactModal>
 

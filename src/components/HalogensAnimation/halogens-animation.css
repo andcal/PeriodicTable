@@ -1,3 +1,8 @@
+.animation {
+	margin: 100px 320px;
+    position: absolute;
+}
+
 #edge {
 	fill: none;
 	stroke: #000;
@@ -6,10 +11,11 @@
 }
 
 @keyframes desappearEdge {
-	100% {opacity: 0}
+	100% {opacity: 0; filter: blur(100px);}
 }
 
 #halogenGroup {
+	transform-origin: center;
 	animation-name: halogenGropuEntrance, halogenGroupScale, groupDesappear;
 	animation-duration: 2000ms, 10000ms, 2000ms;
 	animation-timing-funtion: cubic-bezier(0.19, 1, 0.22, 1), linear;
@@ -22,15 +28,11 @@
 }
 
 @keyframes halogenGroupScale {
-	0% {transform-origin: center;}
-
-	100% {
-		transform-origin: center;
-		transform: scale(1.5) translateX(-25px);
-	}
+	100% {transform: scale(1.5) translateX(-25px); filter: blur(100px);}
 }
 
 #alkalinGroup {
+	transform-origin: center;
 	animation-name: alkalinGropuEntrance, alkalinGroupScale, groupDesappear;
 	animation-duration: 2000ms, 10000ms, 2000ms;
 	animation-timing-funtion: cubic-bezier(0.19, 1, 0.22, 1), linear;
@@ -43,66 +45,48 @@
 }
 
 @keyframes alkalinGroupScale {
-	0% {transform-origin: center;}
-	100% {
-		transform-origin: center;
-		transform: scale(1.5) translateX(25px);
-	}
+	100% {transform: scale(1.5) translateX(25px);}
 }
 
 @keyframes groupDesappear {
-	100% {opacity: 0;}
+	100% {opacity: 0; filter: blur(100px);}
 }
 
 #halogen {
 	transform-origin: center;
 	opacity: 0;
-	animation-name: halogenEntrance, halogenScale;
-	animation-duration: 2000ms, 9000ms;
+	animation-name: halogenEntrance;
+	animation-duration: 11000ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275), linear;
 	animation-fill-mode: forwards;
-	animation-delay: 5500ms, 6500ms;
+	animation-delay: 5000ms;
 }
 
 @keyframes halogenEntrance {
 
 	0% {transform: translate(3px, 21px);}
-	100% {
-		transform: translate(3px, 6px);
-		opacity: 1;
-	}
-}
 
-@keyframes halogenScale {
-	
-	0% {transform: translate(3px, 6px);}
-	100% {	
-		transform: scale(1.5) translate(-22px, -6px);
-	}
+	15% {transform: translate(3px, 6px); opacity: 1;}
+
+	100% {opacity: 1; transform: translate(-30px, -6px) scale(1.5) ;}
 }
 
 #alkalin {
 	transform-origin: center;
 	opacity: 0;
-	animation-name: alkalinEntrance, alkalinScale;
-	animation-duration: 2000ms, 9000ms;
+	animation-name: alkalinEntrance;
+	animation-duration: 11000ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275), linear;
 	animation-fill-mode: forwards;
-	animation-delay: 6500ms, 7500ms;
+	animation-delay: 6000ms;
 }
 
 @keyframes alkalinEntrance {
 	0% {transform: translate(0px, 30px);}
-	100% {
-		transform: translate(0px, 15px);
-		opacity: 1;
-	}
-}
 
-@keyframes alkalinScale {
+	15% {transform: translate(0px, 15px); opacity: 1;}
 
-	0% {transform: translate(0px, 15px);}
-	100% {transform: scale(1.5) translateX(25px);}
+	100% {opacity: 1; transform: translate(30px, 13px) scale(1.5);}
 }
 
 #halogen path:nth-child(n+2) {
@@ -127,24 +111,69 @@
 }
 
 @keyframes prefusionHal {
-	70% {transform: translate(-100px, 115px) scale(2);}
+	40% {transform: translate(-100px, 115px) scale(2);}
 
-	100% {transform: translate(-220px, 115px) scale(2.1);}
+	70% {transform: translate(-260px, 115px) scale(2.1);}
+	
+	85% {filter: blur(0px);}
+
+	99% {transform: translate(-260px, 115px) scale(2.1); opacity: 1;}
+
+	100% {transform: translate(-260px, 115px) scale(2.1); opacity: 0; filter: blur(50px);}
 }
 
 #alkalin path:first-child {
 	transform-origin: center;
 	animation-name: prefusionAlk;
 	animation-duration: 4000ms;
-	animation-timing-funtion: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-timing-funtion: linear;
 	animation-fill-mode: forwards;
 	animation-delay: 12000ms;
 }
 
 @keyframes prefusionAlk {
-	70% {transform: translate(100px, 117px) scale(2);}
+	40% {transform: translate(100px, 117px) scale(2);}
 
-	100% {transform: translate(230px, 117px) scale(2.1);}
+	70% {transform: translate(230px, 117px) scale(2.1);}
+
+	99% {transform: translate(230px, 117px) scale(2.1); opacity: 1;}
+
+	100% {transform: translate(230px, 117px) scale(2.1); opacity: 0;}
+}
+
+#salt path:first-child {
+	transform-origin: center;
+	transform: translateX(140px) scale(1.5);
+	opacity: 0;
+	animation-name: appearanceS;
+	animation-duration: 1500ms;
+	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	animation-fill-mode: forwards;
+	animation-delay: 14500ms;
+}
+
+@keyframes appearanceS {
+	100% {opacity: 1}
+}
+
+#salt path:nth-child(n+2) {
+	transform-origin: center;
+	transform: translate(150px, 50px) scale(1.7);
+	opacity: 0;
+	filter: blur(10px);
+	animation-name: appearanceALT;
+	animation-duration: 1700ms;
+	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	animation-fill-mode: forwards;
+	animation-delay: 17000ms;
+}
+
+@keyframes appearanceALT {
+	100% {transform: translate(150px, 0px); opacity: 1;}
+}
+
+.animation text{
+	color: #c5c2cb;
 }
 
 .interactionContainer {

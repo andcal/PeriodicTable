@@ -1,24 +1,19 @@
-.trigger {
-
-}
-
-.metal {
-	width: 90px;
-    margin: 275px 0 0 549px;
-    height: 90px;
-    background-color: lime;
+.none {
+    display: none;
 }
 
 .nonmetal {
 	width: 90px;
     margin: 100px 0 0 1160px;
-    height: 90px;
-    background-color: lime;
+    height: 100px;
+    fill: #c5c2cb;
+    transition: all 0.5s;
 }
 
-.lanthanide {
-	width: 90px;
-    margin: 550px 0 0 640px;
-    height: 90px;
-    background-color: lime;
+.nonmetal:hover {
+	fill: #777184;
+}
+
+.nonmetal text {
+    font-size: 9.5em;
 }
