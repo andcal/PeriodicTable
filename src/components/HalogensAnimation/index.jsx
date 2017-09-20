@@ -18,7 +18,7 @@ class HalogensAnimation extends Component {
 			dropHalname: ''
 		}
 
-		this.handleInteraction = this.handleInteraction.bind(this)
+		this.handleIntTrigger = this.handleIntTrigger.bind(this)
 		this.handleDropAlk = this.handleDropAlk.bind(this)
 		this.handleDropHal = this.handleDropHal.bind(this)
 	}
@@ -83,11 +83,6 @@ class HalogensAnimation extends Component {
 								<path d="M323.504,176.947h10.828v42.504h25.875v9.316h-36.703V176.947z"/>
 								<path d="M399.828,176.947v9.176h-15.504v42.645h-10.898v-42.645h-15.574v-9.176H399.828z"/>
 							</g>
-						<svg>
-							<rect 	x="850" y="20" width="50" height="50" fill="#000000"
-									onClick = {this.handleInteraction}
-							/>
-						</svg>	
 					</svg>
 
 					<div className = {styles.halogenText}>
@@ -96,58 +91,78 @@ class HalogensAnimation extends Component {
 						<p>Halogens tend to find an electron to be more stable. And alkalins release an electron.</p>
 						<p>When both atoms join produce a compound called salt.</p>
 					</div>
+
+					{/*Drag and drop to trigger the interaction*/}
+					<div 
+						className = {styles.dragDropIntTrigger}
+						onClick = {this.handleIntTrigger}
+					>
+						<p>Produce my salt</p>
+					</div>	
 				</div>
 			)
 		}
 	}
 
-		renderIntearction() {
-		if(this.state. ineteraction) {
+	handleIntTrigger() {
+		this.setState({
+			ineteraction: true
+		})
+	}
+
+	renderIntearction() {
+		if(this.state.ineteraction) {
 			return(
 				<div className={styles.interactionContainer}>
 
 					<div className = {styles.compound}>
-						<span>This is your salt</span>
-						<span>{this.state.dropAlkName}</span>
-						<span>{this.state.dropHalName}</span>
+						<p>This is your salt</p>
+						<p>{this.state.dropAlkName} {this.state.dropHalName}</p>
 					</div>
 					
-					<div className = {styles.dragAlkalin}>
-						<Draggable type="alkalin" data="Li-Lithium">
-							<span>Li</span>
-						</Draggable>
-						<Draggable type="alkalin" data="Na-Sodium">
-							<span>Na</span>
-						</Draggable>
-						<Draggable type="alkalin" data="K-Potassium">
-							<span>K</span>
-						</Draggable>
-					</div>
+					<div className = {styles.dragAndDrop}>
 
-					<Droppable
-						types="alkalin"
-						onDrop={this.handleDropAlk}
-					>
-						<div className={styles.dropAlkalin}>{this.state.dropAlkSymbol}</div>
-					</Droppable>
+						<div className = {styles.dragAlkalin}>
+							<Draggable type="alkalin" data="Li-Lithium">
+								<p>Li</p>
+							</Draggable>
+							<Draggable type="alkalin" data="Na-Sodium">
+								<p>Na</p>
+							</Draggable>
+							<Draggable type="alkalin" data="K-Potassium">
+								<p>K</p>
+							</Draggable>
+						</div>
 
-					<Droppable
-						types="halogen"
-						onDrop={this.handleDropHal}
-					>
-						<div className={styles.dropHalogen}>{this.state.dropHalSymbol}</div>
-					</Droppable>
+						<Droppable
+							types="alkalin"
+							onDrop = {this.handleDropAlk}
+						>
+							<div className={styles.dropAlkalin}>
+								<p>{this.state.dropAlkSymbol}</p>
+							</div>
+						</Droppable>
 
-					<div className = {styles.dragHalogen}>
-						<Draggable type="halogen" data="F-fluoride">
-							<span>F</span>
-						</Draggable>
-						<Draggable type="halogen" data="Cl-chloride">
-							<span>Cl</span>
-						</Draggable>
-						<Draggable type="halogen" data="I-iodide">
-							<span>I</span>
-						</Draggable>
+						<Droppable
+							types="halogen"
+							onDrop={this.handleDropHal}
+						>
+							<div className={styles.dropHalogen}>
+								<p>{this.state.dropHalSymbol}</p>
+							</div>
+						</Droppable>
+
+						<div className = {styles.dragHalogen}>
+							<Draggable type="halogen" data="F-fluoride">
+								<p>F</p>
+							</Draggable>
+							<Draggable type="halogen" data="Cl-chloride">
+								<p>Cl</p>
+							</Draggable>
+							<Draggable type="halogen" data="I-iodide">
+								<p>I</p>
+							</Draggable>
+						</div>
 					</div>
 
 				</div>
@@ -172,12 +187,6 @@ class HalogensAnimation extends Component {
 		this.setState({
 			dropHalSymbol: symbol,
 			dropHalName: formulationName
-		})
-	}
-
-	handleInteraction() {
-		this.setState({
-			ineteraction: true
 		})
 	}
 

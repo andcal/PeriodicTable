@@ -1,7 +1,7 @@
 {
-  "name": "reacttr",
+  "name": "Periodic table",
   "version": "1.0.0",
-  "description": "Clon de twitter con React para propósitos educativos",
+  "description": "Interactive prototype of periodic table",
   "main": "/build/app.js",
   "scripts": {
     "production": "webpack -p",
@@ -9,7 +9,7 @@
     "serve": "webpack-dev-server --content-base build/ --colors --progress",
     "start": "npm run build && npm run serve"
   },
-  "author": "Carlos Azaustre (https://carlosazaustre.es)",
+  "author": "Andrés Calero (https://github.com/andcal)",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.18.0",

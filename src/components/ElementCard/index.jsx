@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import styles from './element-card.css'
 
@@ -10,19 +11,22 @@ class ElementCard extends Component {
 
 	render() {
 
+		let subCategory = this.props.elementData.subCategory
 		let name = this.props.elementData.name
 		let groupCategory = this.props.elementData.groupCategory
-		let subCategory = this.props.elementData.subCategory
+		let mass = (this.props.elementData.mass).toString()
+		let massSlice = mass.slice(0, (mass.indexOf("."))+7)
 
 		return(
-			<div className = {`
-				${styles.card}
-				${styles[subCategory]}
-			`}>
-				<p className={styles.name}>Name: {name}</p>
-				<p className={styles.groupCategory}>Category: {groupCategory}</p>
-				<p className={styles.subCategory}>Subcategory: {subCategory}</p>
-			</div>
+			
+				<div className = {`
+					${styles.card}
+					${styles[subCategory]}
+				`}>
+					<p className={styles.name}>Name:<br/>{name}</p>
+					<p className={styles.mass}>Atomic mass:<br/>{massSlice}</p>
+					<p className={styles.groupCategory}>Category:<br/>{groupCategory}</p>
+				</div>
 		)
 	}
 

@@ -4,6 +4,7 @@
     left: 320px;
 }
 
+/* Beginning fo the animation */
 #edge {
 	fill: none;
 	stroke: #000;
@@ -112,15 +113,15 @@
 }
 
 @keyframes prefusionHal {
-	40% {transform: translate(-100px, 115px) scale(2);}
+	40% {transform: translate(-100px, 120px) scale(2);}
 
-	70% {transform: translate(-260px, 115px) scale(2.1);}
+	70% {transform: translate(-260px, 120px) scale(2.1);}
 	
 	85% {filter: blur(0px);}
 
-	99% {transform: translate(-260px, 115px) scale(2.1); opacity: 1;}
+	90% {transform: translate(-260px, 120px) scale(2.1); opacity: 1;}
 
-	100% {transform: translate(-260px, 115px) scale(2.1); opacity: 0; filter: blur(50px);}
+	100% {transform: translate(-260px, 120px) scale(2.1); opacity: 0; filter: blur(50px);}
 }
 
 #alkalin path:first-child {
@@ -137,7 +138,7 @@
 
 	70% {transform: translate(230px, 117px) scale(2.1);}
 
-	99% {transform: translate(230px, 117px) scale(2.1); opacity: 1;}
+	90% {transform: translate(230px, 117px) scale(2.1); opacity: 1;}
 
 	100% {transform: translate(230px, 117px) scale(2.1); opacity: 0;}
 }
@@ -150,7 +151,7 @@
 	animation-duration: 2000ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	animation-fill-mode: forwards;
-	animation-delay: 16500ms;
+	animation-delay: 17000ms;
 }
 
 @keyframes appearanceS {
@@ -163,10 +164,10 @@
 	opacity: 0;
 	filter: blur(10px);
 	animation-name: appearanceALT;
-	animation-duration: 1700ms;
+	animation-duration: 2000ms;
 	animation-timing-funtion: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	animation-fill-mode: forwards;
-	animation-delay: 20000ms;
+	animation-delay: 19500ms;
 }
 
 @keyframes appearanceALT {
@@ -208,37 +209,105 @@
 	100% {visibility: hidden;}
 }
 
+/* End of the animation */
+
+.dragDropIntTrigger {
+	position: absolute;
+    top: 420px;
+    left: 600px;
+    width: 150px;
+	height: 40px;
+	color: #c5c2cb;
+	border: 2px solid #c5c2cb;
+	background-color: rgba(197, 194, 203, 0.2);
+    opacity: 0;
+    animation: showIntTrigger 2000ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards 26000ms;
+}
+
+@keyframes showIntTrigger {
+	100% {opacity: 1;}
+}
+
+.dragDropIntTrigger > p {
+	font-weight: 300;
+	font-size: 1.1em;	
+	text-align: center;
+	margin-top: 7px;
+	
+}
+
+.dragDropIntTrigger:hover {
+	transform: scale(0.9);
+	filter: grayscale(80%);
+	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .interactionContainer {
-	display: inline-flex;
+	width: 800px;
+	height: 500px;
+	position: absolute;
+    top: 130px;
+    left: 350px;
 }
 
 .compound {
-	width: 100px;
-	height: 50px;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
 }
 
-.compound span:first-child {
-	font-size: 1.2em;
+.compound p:first-child {
+	font-size: 1.3em;
 	font-weight: 300;
-	text-align: center;
+	text-align: center;																	
 }
 
-.compound span:nth-child(n+2) {
-	font-size: 1.4em;
-	font-weight: 300;
+.compound p:nth-child(2) {
+	margin: auto;
+	font-size: 1.5em;
+	font-weight: 500;
 	text-align: center;
+	padding: 5px;	
+	width: 250px;
+	height: 40px;
+	background: linear-gradient(to bottom right, var(--alkali), var(--diatomic));
+}
+
+.dragAndDrop {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.dragAlkalin p {
+	font-size: 2em;
+}
+
+.dragHalogen p {
+	font-size: 2em;
 }
 
 .dropAlkalin {
-	width: 60px;
-	height: 60px;
-	background-color: var(--alkalin);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 150px;
+	background-color: var(--alkali);
 }
 
 .dropHalogen {
-	width: 60px;
-	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 150px;
 	background-color: var(--diatomic);
+}
+
+.dropAlkalin p, .dropHalogen p {
+	font-size: 4em;
+	font-weight: 500;
 }
 
 

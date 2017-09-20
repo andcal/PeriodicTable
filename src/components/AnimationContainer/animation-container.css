@@ -13,11 +13,11 @@
 }
 
 .modal span {
-	top: 6px;
-    right: 20px;
+	top: 13px;
+    right: 25px;
 	position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     padding: 11px;
     transition: stroke 0.8s;
 }

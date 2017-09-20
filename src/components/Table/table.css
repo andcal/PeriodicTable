@@ -6,26 +6,3 @@
 	margin: 35px auto;
 	width: 1350px;
 }
-
-.rotation-enter {
-	transform-style: preserve-3d; 
-	transform-origin: center;
-	opacity: 0;
-}
-
-.rotation-enter.rotation-enter-active {
-	opacity: 1;
-	transition: opacity 3000ms linear;
-}
-
-.rotation-leave {
-	transform-style: preserve-3d; 
-	transform-origin: center;
-	opacity: 1;
-}
-
-.rotation-leave.rotation-leave-active {
-	opacity: 0;
-	transition: opacity 3000ms linear;
-}
-

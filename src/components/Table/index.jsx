@@ -63,6 +63,7 @@ class Table extends Component {
 							groupCategory = {groupCategory}
 							subCategory = {subCategory}								period = {el.ypos}
 							family = {el.xpos}
+							opacity = {this.props.opacity}
 							onPressElement = {this.onPressElement}
 							onOverElement = {this.handleOverElement}
 							onOutElement = {this.handleOutElement}
@@ -80,6 +81,7 @@ class Table extends Component {
 							number = {el.number}
 							symbol = {el.symbol}
 							name = {el.name}
+							mass  = {el.atomic_mass}
 							onPressElement = {this.onPressElement}
 							onOverElement = {this.handleOverElement}
 							onOutElement = {this.handleOutElement}
@@ -100,7 +102,6 @@ class Table extends Component {
 			)
 		}
 	}
-
 
 	render() {
 

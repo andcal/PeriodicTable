@@ -16,7 +16,8 @@ class Element extends Component {
 				family: this.props.family,
 				number: this.props.number,
 				name: this.props.name,
-				symbol: this.props.symbol
+				symbol: this.props.symbol,
+				mass: this.props.mass
 			}
 		}
 	}
