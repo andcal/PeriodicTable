@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import styles from './element.css'
 
 class Element extends Component {

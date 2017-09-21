@@ -3,7 +3,6 @@ import ReactModal from 'react-modal'
 import styles from './animation-container.css'
 import AnimationTrigger from '../AnimationTrigger'
 import HalogensAnimation from '../HalogensAnimation'
-import HalogensInteraction from '../HalogensInteraction'
 
 class AnimationContainer extends Component {
 

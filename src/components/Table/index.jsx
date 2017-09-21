@@ -59,12 +59,7 @@ class Table extends Component {
 					return(//Unstyled family's pressed elements 
 						<Element
 							id = {uuid.v4()}
-							groupCategory = {groupCategory}
-							subCategory = {subCategory}
 							period = {el.ypos}
-							family = {el.xpos}
-							opacity = {this.props.opacity}
-							onPressElement = {this.onPressElement}
 							onOverElement = {this.handleOverElement}
 							onOutElement = {this.handleOutElement}
 						/>

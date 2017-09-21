@@ -22,9 +22,10 @@
 }
 
 .element:hover {
-	transform: scale(0.9);
-	filter: grayscale(50%);
-	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	filter: brightness(0.5);
+	width: 95%;
+	height: 95%;
+	transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /*** Beggining of family appearance. Web load ***/
