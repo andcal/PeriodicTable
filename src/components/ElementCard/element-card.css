@@ -9,11 +9,6 @@
 	align-items: center;
 }
 
-.name::first-line, .groupCategory::first-line, .mass::first-line {
-	font-size: 0.7em;
-	font-weight: 300;
-}
-
 .name, .groupCategory, .mass {
 	font-size: 1.1em;
 	font-weight: 500;
@@ -22,6 +17,12 @@
 	margin: 5px;
 }
 
+.name::first-line, .groupCategory::first-line, .mass::first-line {
+	font-size: 0.7em;
+	font-weight: 300;
+}
+
+/*** Begining of family style ***/
 .alkali, .alkaline {
 	background-color: rgba(24, 255, 146, 0.2);
 	border-color: var(--alkali);
@@ -75,3 +76,4 @@
 	border-color: var(--noble);
 	color: var(--noble);
 }
+/*** END of family style ***/

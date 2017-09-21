@@ -17,8 +17,7 @@
 
 @keyframes shaker {
 	60% {transform: rotate(135deg)}
-
-	100% {transform: rotate(-	135deg)}
+	100% {transform: rotate(-135deg)}
 }
 
 .nonmetal text {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Anime from 'react-anime'
 import { Draggable, Droppable } from 'react-drag-and-drop'
-
 import styles from './halogens-animation.css'
 import HalogensInteraction from '../HalogensAnimation'
 
@@ -21,6 +20,12 @@ class HalogensAnimation extends Component {
 		this.handleIntTrigger = this.handleIntTrigger.bind(this)
 		this.handleDropAlk = this.handleDropAlk.bind(this)
 		this.handleDropHal = this.handleDropHal.bind(this)
+	}
+
+	handleIntTrigger() {
+		this.setState({
+			ineteraction: true
+		})
 	}
 
 	renderAnimationInteraction() {
@@ -92,9 +97,9 @@ class HalogensAnimation extends Component {
 						<p>When both atoms join produce a compound called salt.</p>
 					</div>
 
-					{/*Drag and drop to trigger the interaction*/}
+					{/*Button to trigger the interaction*/}
 					<div 
-						className = {styles.dragDropIntTrigger}
+						className = {styles.interactionTrigger}
 						onClick = {this.handleIntTrigger}
 					>
 						<p>Produce my salt</p>
@@ -104,24 +109,16 @@ class HalogensAnimation extends Component {
 		}
 	}
 
-	handleIntTrigger() {
-		this.setState({
-			ineteraction: true
-		})
-	}
-
 	renderIntearction() {
 		if(this.state.ineteraction) {
 			return(
 				<div className={styles.interactionContainer}>
-
 					<div className = {styles.compound}>
 						<p>This is your salt</p>
 						<p>{this.state.dropAlkName} {this.state.dropHalName}</p>
 					</div>
 					
 					<div className = {styles.dragAndDrop}>
-
 						<div className = {styles.dragAlkalin}>
 							<Draggable type="alkalin" data="Li-Lithium">
 								<p>Li</p>
@@ -164,13 +161,13 @@ class HalogensAnimation extends Component {
 							</Draggable>
 						</div>
 					</div>
-
 				</div>
 			)
 		}
 	}
 
 	handleDropAlk(data){
+
 		let symbol = data.alkalin.split('-')[0]
 		let formulationName = data.alkalin.split('-')[1]
 
@@ -181,6 +178,7 @@ class HalogensAnimation extends Component {
 	}
 
 	handleDropHal(data){
+
 		let symbol = data.halogen.split('-')[0]
 		let formulationName = data.halogen.split('-')[1]
 
@@ -191,7 +189,6 @@ class HalogensAnimation extends Component {
 	}
 
 	render() {
-
 		return(
 			<div>
 				{ this.renderAnimationInteraction() }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import uuid from 'uuid'
-
 import styles from './table.css'
 import Element from '../Element'
 import ElementCard from '../ElementCard'
@@ -57,11 +56,12 @@ class Table extends Component {
 				let subCategory = categories[0]
 
 				if( groupCategory === this.state.rotate ) {
-					return(
+					return(//Unstyled family's pressed elements 
 						<Element
 							id = {uuid.v4()}
 							groupCategory = {groupCategory}
-							subCategory = {subCategory}								period = {el.ypos}
+							subCategory = {subCategory}
+							period = {el.ypos}
 							family = {el.xpos}
 							opacity = {this.props.opacity}
 							onPressElement = {this.onPressElement}
@@ -93,7 +93,6 @@ class Table extends Component {
 	}
 
 	renderCardElement() {
-
 		if(this.state.card && this.state.rotate === '') {
 			return(
 				<ElementCard
@@ -104,7 +103,6 @@ class Table extends Component {
 	}
 
 	render() {
-
 		return(
 			<div className = {styles.table}>
 

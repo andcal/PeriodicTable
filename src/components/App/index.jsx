@@ -42,19 +42,17 @@ class App extends Component {
     }
 
     renderAnimationContainer() {
-        if(this.state.rotate !== '') {
-    
+        if(this.state.rotate !== '') { 
             return (               
-                     <AnimationContainer
-                        groupCategory = {this.state.rotate}
-                        onReappearElements = {this.handleReappearanceElements}
-                    />
+                <AnimationContainer
+                    groupCategory = {this.state.rotate}
+                    onReappearElements = {this.handleReappearanceElements}
+                />
             )
         } 
     }
 
     render() {
-
         return (
             <div>
 
@@ -70,6 +68,5 @@ class App extends Component {
         )
     }
 }
-
 
 export default App

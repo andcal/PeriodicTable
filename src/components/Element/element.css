@@ -1,81 +1,8 @@
-.element.family1 {
+.element {
 	opacity: 0;
 	border-width: 2px;
 	border-style: solid;
 	transform-style: preserve-3d;
-	animation: spin 700ms linear forwards 500ms;
-}
-
-.element.family1 .number {
-	opacity: 0;
-	animation: spinNumber 700ms linear forwards 500ms;
-}
-
-.element.family1 .symbol {
-	transform: translateY(-10px) scale(1.3);
-	opacity: 0;
-	animation: appearName 300ms linear forwards 1200ms;
-}
-
-.element.family2 {
-	opacity: 0;
-	border-width: 2px;
-	border-style: solid;
-	transform-style: preserve-3d;
-	animation: spin 700ms linear forwards 800ms;
-}
-
-.element.family2 .number {
-	opacity: 0;
-	animation: spinNumber 700ms linear forwards 800ms;
-}
-
-.element.family2 .symbol {
-	transform: translateY(-10px) scale(1.3);
-	opacity: 0;
-	animation: appearName 300ms linear forwards 1300ms;
-}
-
-.element.family3 {
-	opacity: 0;
-	border-width: 2px;
-	border-style: solid;
-	transform-style: preserve-3d;
-	animation: spin 700ms linear forwards 1000ms;
-}
-
-.element.family3 .number {
-	opacity: 0;
-	animation: spinNumber 700ms linear forwards 1000ms;
-}
-
-.element.family3 .symbol {
-	transform: translateY(-10px) scale(1.3);
-	opacity: 0;
-	animation: appearName 300ms linear forwards 1600ms;
-}
-
-@keyframes spin {
-	0% {transform: rotateY(180deg); opacity: 1;}
-	70% {transform: rotateY(340deg);} 
-	100% {transform: rotateY(360deg); opacity: 1;}
-}
-
-@keyframes spinNumber {
-	49% {opacity: 0;}
-	50% {opacity: 1;} 
-	100% {opacity: 1;}
-}
-
-@keyframes appearName {
-	100% {transform: translateY(0px); opacity: 1;}
-
-}
-
-.element:hover {
-	transform: scale(0.9);
-	filter: grayscale(50%);
-	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .number {
@@ -90,12 +17,173 @@
 	font-weight: 500;
 	text-align: center;
 	margin: auto;
+	transform: translateY(-10px) scale(1.3);
+	opacity: 0;
 }
 
-.rotate p {
-	visibility: hidden;
+.element:hover {
+	transform: scale(0.9);
+	filter: grayscale(50%);
+	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/*** Beggining of family appearance. Web load ***/
+.element.family1 {
+	animation: spin 600ms linear forwards 500ms;
+}
+
+.element.family1 .symbol {
+	animation: appearName 300ms linear forwards 1000ms;
+}
+
+.element.family2 {
+	animation: spin 600ms linear forwards 800ms;
+}
+
+.element.family2 .symbol {
+	animation: appearName 300ms linear forwards 1300ms;
+}
+
+.element.family3 {
+	animation: spin 600ms linear forwards 1100ms;
+}
+
+.element.family3 .symbol {
+	animation: appearName 300ms linear forwards 1600ms;
+}
+
+.element.family4 {
+	animation: spin 600ms linear forwards 1400ms;
+}
+
+.element.family4 .symbol {
+	animation: appearName 300ms linear forwards 1900ms;
+}
+
+.element.family5 {
+	animation: spin 600ms linear forwards 1700ms;
+}
+
+.element.family5 .symbol {
+	animation: appearName 300ms linear forwards 2200ms;
+}
+
+.element.family6 {
+	animation: spin 600ms linear forwards 2000ms;
+}
+
+.element.family6 .symbol {
+	animation: appearName 300ms linear forwards 2500ms;
+}
+
+.element.family7 {
+	animation: spin 600ms linear forwards 2300ms;
+}
+
+.element.family7 .symbol {
+	animation: appearName 300ms linear forwards 2800ms;
+}
+
+.element.family8 {
+	animation: spin 600ms linear forwards 2600ms;
+}
+
+.element.family8 .symbol {
+	animation: appearName 300ms linear forwards 3100ms;
+}
+
+.element.family9 {
+	animation: spin 600ms linear forwards 2900ms;
+}
+
+.element.family9 .symbol {
+	animation: appearName 300ms linear forwards 3400ms;
+}
+
+.element.family10 {
+	animation: spin 600ms linear forwards 3200ms;
+}
+
+.element.family10 .symbol {
+	animation: appearName 300ms linear forwards 3700ms;
+}
+
+.element.family11 {
+	animation: spin 600ms linear forwards 3500ms;
+}
+
+.element.family11 .symbol {
+	animation: appearName 300ms linear forwards 4000ms;
+}
+
+.element.family12 {
+	animation: spin 600ms linear forwards 3800ms;
+}
+
+.element.family12 .symbol {
+	animation: appearName 300ms linear forwards 4300ms;
+}
+
+.element.family13 {
+	animation: spin 600ms linear forwards 4100ms;
+}
+
+.element.family13 .symbol {
+	animation: appearName 300ms linear forwards 4600ms;
+}
+
+.element.family14 {
+	animation: spin 600ms linear forwards 4400ms;
+}
+
+.element.family14 .symbol {
+	animation: appearName 300ms linear forwards 4900ms;
+}
+
+.element.family15 {
+	animation: spin 600ms linear forwards 4700ms;
+}
+
+.element.family15 .symbol {
+	animation: appearName 300ms linear forwards 5200ms;
+}
+
+.element.family16 {
+	animation: spin 600ms linear forwards 5000ms;
+}
+
+.element.family16 .symbol {
+	animation: appearName 300ms linear forwards 5500ms;
+}
+
+.element.family17 {
+	animation: spin 600ms linear forwards 5300ms;
+}
+
+.element.family17 .symbol {
+	animation: appearName 300ms linear forwards 5800ms;
+}
+
+.element.family18 {
+	animation: spin 600ms linear forwards 5600ms;
+}
+
+.element.family18 .symbol {
+	animation: appearName 300ms linear forwards 6100ms;
+}
+
+@keyframes spin {
+	0% {transform: rotateY(270deg); opacity: 1;}
+	70% {transform: rotateY(340deg);} 
+	100% {transform: rotateY(360deg); opacity: 1;}
+}
+
+@keyframes appearName {
+	100% {transform: translateY(0px); opacity: 1;}
+}
+/*** END of family appearance ***/
+
+/*** Begining of family style ***/
 .alkali, .alkaline {
 	background-color: rgba(24, 255, 146, 0.2);
 	border-color: var(--alkali);
@@ -149,6 +237,7 @@
 	border-color: var(--noble);
 	color: var(--noble);
 }
+/*** END of family style ***/
 
 .family1 {
 	grid-column: 1;

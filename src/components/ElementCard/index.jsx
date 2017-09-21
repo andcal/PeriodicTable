@@ -19,14 +19,14 @@ class ElementCard extends Component {
 
 		return(
 			
-				<div className = {`
-					${styles.card}
-					${styles[subCategory]}
-				`}>
-					<p className={styles.name}>Name:<br/>{name}</p>
-					<p className={styles.mass}>Atomic mass:<br/>{massSlice}</p>
-					<p className={styles.groupCategory}>Category:<br/>{groupCategory}</p>
-				</div>
+			<div className = {`
+				${styles.card}
+				${styles[subCategory]}
+			`}>
+				<p className={styles.name}>Name:<br/>{name}</p>
+				<p className={styles.mass}>Atomic mass:<br/>{massSlice}</p>
+				<p className={styles.groupCategory}>Category:<br/>{groupCategory}</p>
+			</div>
 		)
 	}
 

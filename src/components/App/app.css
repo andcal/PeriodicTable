@@ -14,6 +14,7 @@ body {
 	font-family: 'Rubik', sans-serif;
 }
 
+/* Colors for the element's style */
 :root {
 	--alkali: rgb(24, 255, 146);
 	--transition: rgb(28, 226, 178);

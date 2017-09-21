@@ -4,7 +4,7 @@
     left: 320px;
 }
 
-/* Beginning fo the animation */
+/*** Beginning of the animation ***/
 #edge {
 	fill: none;
 	stroke: #000;
@@ -208,10 +208,10 @@
 	99% {visibility: visible;}
 	100% {visibility: hidden;}
 }
+/*** END of the animation ***/
 
-/* End of the animation */
-
-.dragDropIntTrigger {
+/***  ***/
+.interactionTrigger {
 	position: absolute;
     top: 420px;
     left: 600px;
@@ -228,26 +228,27 @@
 	100% {opacity: 1;}
 }
 
-.dragDropIntTrigger > p {
+.interactionTrigger > p {
 	font-weight: 300;
 	font-size: 1.1em;	
 	text-align: center;
 	margin-top: 7px;
-	
 }
 
-.dragDropIntTrigger:hover {
+.interactionTrigger:hover {
 	transform: scale(0.9);
 	filter: grayscale(80%);
 	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/*** Interaction style ***/
 .interactionContainer {
 	width: 800px;
 	height: 500px;
 	position: absolute;
     top: 130px;
     left: 350px;
+    color: #fff;
 }
 
 .compound {
@@ -267,6 +268,7 @@
 	font-size: 1.5em;
 	font-weight: 500;
 	text-align: center;
+	text-shadow: 2px 3px 6px rgba(27, 26, 26, 0.80);
 	padding: 5px;	
 	width: 250px;
 	height: 40px;
@@ -308,8 +310,6 @@
 .dropAlkalin p, .dropHalogen p {
 	font-size: 4em;
 	font-weight: 500;
+	text-shadow: 2px 3px 6px rgba(27, 26, 26, 0.80);
 }
-
-
-
-
+/*** END of nteraction style ***/

@@ -1,5 +1,5 @@
 {
-  "name": "Periodic table",
+  "name": "PeriodicTable",
   "version": "1.0.0",
   "description": "Interactive prototype of periodic table",
   "main": "/build/app.js",
